@@ -1,0 +1,64 @@
+{
+  "name": "ydb-admin-ops-gui",
+  "version": "0.0.1",
+  "description": "YodaDB Administration GUI",
+  "productName": "YodaDB",
+  "author": "YodaDB Developers <info@yodadb.com>",
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "build": "./node_modules/@quasar/app/bin/quasar build",
+    "build-pwa": "./node_modules/@quasar/app/bin/quasar build -m pwa",
+    "dev": "./node_modules/@quasar/app/bin/quasar dev",
+    "dev-pwa": "./node_modules/@quasar/app/bin/quasar dev -m pwa",
+    "clean": "./node_modules/@quasar/app/bin/quasar clean",
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "mocha tests/bootstrap.js --recursive --timeout=300000 --bail tests",
+    "stop-server": "ydb_routines=`$ydb_dist/yodadb -run %XCMD 'w $p($p($zro,\"(\",1,2),\")\")_\" \"_\"$PWD/routines\"_\")\"_$p($zro,\")\",2,$l($zro,\")\"))'`;$ydb_dist/yodadb -run 'Stop^%YDBWEB'",
+    "start-server": "ydb_routines=`$ydb_dist/yodadb -run %XCMD 'w $p($p($zro,\"(\",1,2),\")\")_\" \"_\"$PWD/routines\"_\")\"_$p($zro,\")\",2,$l($zro,\")\"))'`;$ydb_dist/yodadb -run 'Start^%YDBWEB'",
+    "install-server": "path=$($ydb_dist/yodadb -run %XCMD 'f i=1:1:$l($zro,\" \") s x=$p($zro,\" \",i) i x'\"'\"'?.E1\".so\" w $p($p(x,\"(\",$l(x,\"(\")),\")\",1),! q') && find ./routines/ -type f -name \"*.m\"| xargs -L1 -I '{}' cp -v '{}' $path",
+    "uninstall-server": "path=$($ydb_dist/yodadb -run %XCMD 'f i=1:1:$l($zro,\" \") s x=$p($zro,\" \",i) i x'\"'\"'?.E1\".so\" w $p($p(x,\"(\",$l(x,\"(\")),\")\",1),! q') && find ./routines/ -type f -name \"*.m\" |  cut -d \"/\" -f 3 | xargs -L1 -I '{}' echo $path/'{}' | xargs -I '{}' rm -v '{}' | xargs -I '{}' echo '{}'",
+    "start": "$ydb_dist/yodadb -run 'Start^%YDBWEB'",
+    "stop": "$ydb_dist/yodadb -run 'Stop^%YDBWEB'"
+  },
+  "dependencies": {
+    "@fontsource/firago": "^4.5.1",
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.4",
+    "chart.js": "^2.9.4",
+    "core-js": "^3.12.1",
+    "quasar": "^1.15.13",
+    "vue-chartjs": "^3.5.1",
+    "vue-codemirror": "^4.0.6",
+    "vue-friendly-iframe": "^0.20.0",
+    "vue-i18n": "^8.0.0",
+    "vuelidate": "^0.7.6"
+  },
+  "devDependencies": {
+    "@quasar/app": "^2.2.11",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.3.4",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "eslint-webpack-plugin": "^2.4.0",
+    "lodash": "^4.17.21",
+    "mocha": "^9.2.0"
+  },
+  "browserslist": [
+    "ie >= 11",
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
