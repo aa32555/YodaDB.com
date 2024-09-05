@@ -10,8 +10,9 @@ curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_instal
 
 ydb
 
-d Start^%YDBWEB(1987) ; where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
-
+# ; where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
+#
+d Start^%YDBWEB(1987)
 git clone repo
 npm install
 ./node_modules/@quasar/app/bin/quasar-dev
