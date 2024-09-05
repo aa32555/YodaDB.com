@@ -18,7 +18,7 @@
         <q-breadcrumbs-el label="Home" icon="home" :to="'/'"/>
         <q-breadcrumbs-el  label="Running Processes" :to="'/processes'" icon="view_list"/>
       </q-breadcrumbs>
-       <q-btn id="btn-refresh" round style="margin-right:10px" size="md" icon="refresh"  :color="!$q.dark.isActive ? 'green' : 'yellow'"  @click="refreshProcesses">
+       <q-btn id="btn-refresh" round style="margin-right:10px" size="xl" color="primary" icon="refresh" @click="refreshProcesses">
         <q-tooltip>
         Refresh running processes
         </q-tooltip>
@@ -28,13 +28,13 @@
         <div class="col-auto">
     <div v-if="loading">
         <q-spinner-dots
-          :color="$q.dark.isActive ? 'green' : 'yellow'"
+          :color="$q.dark.isActive ? 'white' : 'black'"
           size="16em"
         />
         <q-tooltip :offset="[0, 8]">QSpinnerGears</q-tooltip>
       </div>
     <q-markup-table id="processes_table" flat bordered v-if="!loading" style="max-height:calc(100vh - 190px)">
-      <thead :class="$q.dark.isActive ? 'bg-black text-white' : 'bg-green text-white'">
+      <thead :class="$q.dark.isActive ? 'bg-black text-white' : 'bg-white text-black'">
         <tr>
           <th colspan="5">
             <div class="row no-wrap items-center">
@@ -42,7 +42,7 @@
                 style="width: 70px"
                 :ratio="1"
                 class="rounded-borders"
-               src="~assets/uc-1.png"
+               src="~assets/dashboard-card.png"
               />
 
               <div id="processes_header" class="text-h4 q-ml-md text-white">Running Processes</div>

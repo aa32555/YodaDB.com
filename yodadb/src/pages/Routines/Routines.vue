@@ -86,11 +86,6 @@
       <template v-slot:before>
         <span
           id="routines_header"
-          :class="
-            $q.dark.isActive
-              ? 'text-green text-center'
-              : 'text-yellow text-center'
-          "
           style="font-size:28px;padding:25px"
         >
           Routines
@@ -135,7 +130,6 @@
                   <q-item-label
                     id="routine_count_section"
                     overline
-                    :class="$q.dark.isActive ? 'text-green' : 'text-yellow'"
                     >{{ routineTotal }} Routines</q-item-label
                   >
 
@@ -211,11 +205,7 @@
             outside-arrows
             dense
             align="left"
-            :class="
-              $q.dark.isActive
-                ? 'text-green text-bold'
-                : 'text-yellow text-bold'
-            "
+           
             :breakpoint="0"
           >
             <q-tab
@@ -302,7 +292,7 @@
             label="Routine Location*"
           />
         </q-card-section>
-        <q-card-actions align="right" class="text-primary">
+        <q-card-actions align="right" class="text-white">
           <q-btn
             flat
             label="Cancel"

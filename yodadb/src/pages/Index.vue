@@ -17,13 +17,13 @@
       <img
         v-if="!$q.dark.isActive"
         alt="Quasar logo"
-        src="~assets/ksa-light.webp"
+        src="~assets/dashboard-card.png"
         style="max-width:35vw"
       />
       <img
         v-if="$q.dark.isActive"
         alt="Quasar logo"
-        src="~assets/ksa-dark.webp"
+        src="~assets/dashboard-card.png"
         style="max-width:35vw"
       />
     </div>
@@ -32,7 +32,7 @@
       style="padding-top:50px;"
     >
       <q-card style="width:300px" id="mn-navigation-panels">
-        <q-img src="~assets/uc-1.png" />
+        <q-img src="~assets/dashboard-card.png" />
         <q-card-actions>
           <span style="font-size:18px;font-weight:700;">{{$t('toolbar.system_management')}}</span>
           <q-space />
@@ -68,7 +68,7 @@
       </q-card>
 
       <q-card style="width:300px">
-        <q-img src="~assets/uc-2.png" />
+        <q-img src="~assets/dashboard-card.png" />
         <q-card-actions>
           <span style="font-size:18px;font-weight:700;">{{$t('toolbar.system_explorer')}}</span>
           <q-space />
@@ -103,7 +103,7 @@
         </q-slide-transition>
       </q-card>
       <q-card style="width:300px">
-        <q-img src="~assets/uc-4.png" />
+        <q-img src="~assets/dashboard-card.png" />
         <q-card-actions>
           <span style="font-size:18px;font-weight:700;">{{$t('toolbar.utilities')}}</span>
           <q-space />
@@ -128,7 +128,7 @@
         </q-slide-transition>
       </q-card>
             <q-card style="width:300px">
-        <q-img src="~assets/uc-6.png" />
+        <q-img src="~assets/dashboard-card.png" />
         <q-card-actions>
           <span style="font-size:18px;font-weight:700;"> {{$t('toolbar.documentation')}}</span>
           <q-space />

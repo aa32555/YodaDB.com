@@ -17,43 +17,40 @@
       v-if="(settingsEntered && isNotSPA) || !isNotSPA"
       elevated
       height-hint="61.59"
-      :class="$q.dark.isActive ? 'text-white bg-black' : 'text-black bg-green'"
+      :class="$q.dark.isActive ? 'text-white bg-black' : 'text-white bg-black'"
     >
       <q-toolbar class="q-py-sm q-px-md">
         <q-btn
-          round
           dense
-          flat
-          :ripple="false"
+          :ripple="true"
           style="margin-right:10px"
           :to="'/'"
           id="main-navigation-page"
         >
           <q-avatar size="42px">
-            <img src="~assets/ksa-light.webp" style="background-color:white;" />
+            <img src="~assets/dashboard-card.png" style="background-color:white;" />
           </q-avatar>
         </q-btn>
 
         <div
-          v-if="false"
-          v-ifx="$q.screen.gt.xs"
+          v-if="$q.screen.gt.xs"
           class="GL__toolbar-link q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center "
         >
-          <q-btn-dropdown flat :label="$t('toolbar.system_management')" dense v-if="false">
+          <q-btn-dropdown flat :label="$t('toolbar.system_management')" dense>
             <q-list>
-             <q-item clickable v-close-popup :to="'/dashboard'" dense v-if="false">
+             <q-item clickable v-close-popup :to="'/dashboard'" dense >
                 <q-item-section>
                   <q-item-label>{{$t('toolbar.dashboard')}}</q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item clickable v-close-popup :to="'/processes'" dense v-if="false">
+              <q-item clickable v-close-popup :to="'/processes'" dense >
                 <q-item-section>
                   <q-item-label>{{
                     $t("toolbar.running_processes")
                   }}</q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item clickable v-close-popup :to="'/gde'" dense v-if="false" >
+              <q-item clickable v-close-popup :to="'/gde'" dense  >
                 {{ $t("toolbar.global_directory_editor") }}
               </q-item>
             </q-list>
@@ -66,43 +63,20 @@
               <q-item clickable v-close-popup :to="'/globals'" dense>
               {{ $t("toolbar.globals") }}
               </q-item>
-              <q-item clickable v-close-popup :to="'/octo-sql'" dense v-if="false">
+              <q-item clickable v-close-popup :to="'/octo-sql'" dense>
                 {{ $t("toolbar.sqltables") }}
               </q-item>
             </q-list>
           </q-btn-dropdown>
-          <q-btn-dropdown flat :label="$t('toolbar.utilities')" dense v-if="false">
-            <q-list> </q-list>
-          </q-btn-dropdown>
-          <q-btn-dropdown flat :label="$t('toolbar.documentation')" dense v-if="false">
+           <q-btn-dropdown flat :label="$t('toolbar.documentation')" dense>
             <q-list>
-              <q-item clickable :to="'/documentation/administration_and_operations'" dense v-if="false">
-                  Administration and Operations
+              <q-item clickable dense >
+                 <a href="https://aa32555.github.io/efuzy.com"> /\/\/\/\/\/\/\/\/\/\ </a>
               </q-item>
-              <q-item clickable :to="'/documentation/multi-language_programmers_guide'" dense v-if="false">
-                  Multi-Language Programmers Guide
-              </q-item>
-              <q-item clickable :to="'/documentation/m_programmers_guide'" dense v-if="false">
-                  M Programmers Guide
-              </q-item>
-              <q-item clickable :to="'/documentation/messages_and_recovery_procedures'" dense v-if="false">
-                  Messages and Recovery Procedures
-              </q-item>
-              <q-item clickable :to="'/documentation/acculturation_guide'" dense v-if="false">
-                  Acculturation Guide
-              </q-item>
-              <q-item clickable :to="'/documentation/octo_documentation'" dense v-if="false">
-                  Octo Documentation
-              </q-item>
-              <q-item clickable :to="'/documentation/plugins'" dense v-if="false">
-                  Plugins
-              </q-item>
-            </q-list>
+              </q-list>
           </q-btn-dropdown>
         </div>
-
         <q-space />
-
         <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
           <q-select
             v-model="lang"
@@ -112,7 +86,7 @@
             emit-value
             map-options
             options-dense
-            label-color="lime"
+            label-color="white"
             style="width: 40px"
           >
             <template v-slot:selected-item="scope">
@@ -154,7 +128,7 @@
           style="max-width:50vw;padding:10px"
         />
         <q-card-section>
-          <div class="text-h6">Connection Info</div>
+          <div class="text-h6">Connection Info<br><a href="https://www.github.com/aa32555"> في عينيها أرى الحياةِ </a></div>
           <div></div>
         </q-card-section>
 
@@ -201,6 +175,7 @@
             :disable="checkingConnection"
             :label="checkingConnection ? 'Checking connection...' : 'OK'"
             @click="setSettings"
+            @key.enter="setSettings"
           />
         </q-card-actions>
       </q-card>
@@ -222,8 +197,8 @@ export default {
       protocol: "http",
       port: "",
       theme: "light",
-      // lang: this.$i18n.locale,
-      lang: "en-us",
+      lang: this.$i18n.locale || "en-us",
+      //lang: "en-us",
       langOptions: [
         { value: "en-us", label: "EN" },
         { value: "ar", label: "AR" }
@@ -232,12 +207,12 @@ export default {
     };
   },
   mounted() {
-    if (this.$i18n.locale !== "en-us") {
+    if (this.$i18n.locale !== "en-us" && this.$i18n.locale !=='ar') {
       this.lang = "en-us";
     }
   },
   created() {
-    this.theme = this.$q.localStorage.getItem("ydb-app-theme") || "light";
+    this.theme = this.$q.localStorage.getItem("ydb-app-theme") || "dark";
     if (this.theme === "dark") {
       this.$q.dark.set(true);
     } else {
