@@ -9,9 +9,12 @@
 curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
 
 # where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
-$ydb_dist/yottadb -run Start^%YDBWEB(1987)
+ydb -run Start^%YDBWEB
 git clone https://github.com/aa32555/YodaDB.com.git YodaDB
 cd YodaDB
+./home/ahmedatefuzy/.config/nvm.sh
+nvm install --lts
+nvm use --lts
 npm install
 ./node_modules/@quasar/app/bin/quasar-dev
 
