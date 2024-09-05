@@ -141,6 +141,7 @@
 <pre>
   www.YodaDB.com
   github.com/aa32555
+  𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁
 </pre></span>
           <div></div>
         </q-card-section>
