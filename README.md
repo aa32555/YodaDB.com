@@ -20,6 +20,7 @@ nvm use --lts
 npm install
 ./node_modules/@quasar/app/bin/quasar-dev
 
+
 # open http://127.0.0.1:8080
 # Enjoy
 
