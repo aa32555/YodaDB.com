@@ -128,7 +128,7 @@
           style="max-width:50vw;padding:10px"
         />
         <q-card-section>
-          <div class="text-h6">
+          <span>
             <q-btn
             dense
             flat
@@ -137,22 +137,11 @@
             :icon="theme === 'light' ? 'wb_sunny' : 'nightlight_round'"
             @click="changeTheme"
           />
- <q-select
-            v-model="lang"
-            :options="langOptions"
-            dense
-            borderless
-            emit-value
-            map-options
-            options-dense
-            label-color="white"
-            style="width: 40px"
-          >
-            <template v-slot:selected-item="scope">
-              <span class="text-white"> {{ scope.opt.label }} </span>
-            </template>
-          </q-select>
-            Connection Info<br><a href="https://www.github.com/aa32555"> في عينيها أرى الحياةِ </a></div>
+
+<pre>
+  www.YodaDB.com
+  github.com/aa32555
+</pre></span>
           <div></div>
         </q-card-section>
 
