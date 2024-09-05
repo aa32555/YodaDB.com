@@ -9,7 +9,7 @@
 curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
 
 # where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
-$ydb_dist/yottadb -run Start^%YDBWEB(1987)
+$ydb_dist/yodadb -run Start^%YDBWEB(1987)
 
 ```
 

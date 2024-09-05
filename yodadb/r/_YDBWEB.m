@@ -1,7 +1,7 @@
-%YDBWEB ;YottaDB Web Server; 05-07-2021
+%YDBWEB ;YodaDB Web Server; 05-07-2021
 	;#################################################################
 	;#                                                               #
-	;# Copyright (c) 2021 YottaDB LLC and/or its subsidiaries.       #
+	;# Copyright (c) 2021 YodaDB LLC and/or its subsidiaries.       #
 	;# All rights reserved.                                          #
 	;#                                                               #
 	;#   This source code contains the intellectual property         #
@@ -16,7 +16,7 @@
 ROUTES
 	S YDBWEB(":WS","ROUTES","POST","ydbwebapi","API^%YDBWEBAPI")=""
 	S YDBWEB(":WS","ROUTES","OPTIONS","ydbwebapi","API^%YDBWEBAPI")=""
-	S YDBWEB(":WS","ROUTES","GET","YottaDB","SERVESTATIC^%YDBWEBAPI")=""
+	S YDBWEB(":WS","ROUTES","GET","YodaDB","SERVESTATIC^%YDBWEBAPI")=""
 	;
 	Q	
 	;
@@ -24,13 +24,13 @@ Start(PORT) ;
 	K (PORT)
 	I '$G(PORT) S PORT=8089
 	S NOGLB=1
-	I 1 J JOB(PORT) H 1 I '$T W !,"YottaDB Web Server could not be started!" Q
+	I 1 J JOB(PORT) H 1 I '$T W !,"YodaDB Web Server could not be started!" Q
 	S JOB=$ZJOB
 	I '$$DirectoryExists^%YDBUTILS("/tmp") D
 	. W !,"Creating /tmp ..."
 	. W:$$CreateDirectoryTree^%YDBUTILS("/tmp") " succeeded" 
 	ZSY "echo ""PID:"_JOB_",Port:"_PORT_""" > /tmp/ydbweb.info"
-	W !,"YottaDB Web Server started successfully. Port: ",PORT," - PID: ",JOB,!
+	W !,"YodaDB Web Server started successfully. Port: ",PORT," - PID: ",JOB,!
 	Q
 Stop;
 	K
@@ -41,9 +41,9 @@ Stop;
 	N PORT,PID
 	S PID=$P($P(LINE,","),":",2)
 	S PORT=$P($P(LINE,",",2),":",2)
-	I 'PID W !!,"YottaDB Web Server could not be stopped!" Q
+	I 'PID W !!,"YodaDB Web Server could not be stopped!" Q
 	ZSY "kill "_PID
-	W !,"Killed PID: "_PID_". YottaDB Web Server stopped successfully.",!
+	W !,"Killed PID: "_PID_". YodaDB Web Server stopped successfully.",!
 	;ZSY "netstat -ano -p tcp | grep "_PORT
 	Q
 	;
@@ -67,7 +67,7 @@ RUN(HTTPREQ,HTTPRSP,HTTPARGS)
 	N PORT,PID
 	S PID=$P($P(LINE,","),":",2)
 	S PORT=$P($P(LINE,",",2),":",2)
-	S @HTTPRSP@(1)="YottaDB web server running on PID: "_PID_" and "_"Port: "_PORT
+	S @HTTPRSP@(1)="YodaDB web server running on PID: "_PID_" and "_"Port: "_PORT
 	Q       
 	;
 VIDS(HTTPREQ,HTTPRSP,HTTPARGS)
@@ -241,8 +241,8 @@ MATCHF(ROUTINE,ARGS,AUTHNODE)
 	N PATH1 S PATH1=$$URLDEC($P(PATH,"/",1),1)
 	N PATTERN S PATTERN=PATH1
 	I PATTERN="" S PATTERN="/"
-	I PATTERN=""  S PATTERN="YottaDB"
-	I PATTERN="/" S PATTERN="YottaDB"
+	I PATTERN=""  S PATTERN="YodaDB"
+	I PATTERN="/" S PATTERN="YodaDB"
 	I '$D(YDBWEB(":WS","ROUTES")) D ROUTES
 	I $D(YDBWEB(":WS","ROUTES",HTTPREQ("method"),PATTERN)) D
 	. S ROUTINE=$O(YDBWEB(":WS","ROUTES",HTTPREQ("method"),PATTERN,""))

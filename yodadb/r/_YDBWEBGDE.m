@@ -1,7 +1,7 @@
-%YDBWEBGDE ; YottaDB Web Server GDE API Entry Point; 05-07-2021
+%YDBWEBGDE ; YodaDB Web Server GDE API Entry Point; 05-07-2021
 	;#################################################################
 	;#                                                               #
-	;# Copyright (c) 2021 YottaDB LLC and/or its subsidiaries.       #
+	;# Copyright (c) 2021 YodaDB LLC and/or its subsidiaries.       #
 	;# All rights reserved.                                          #
 	;#                                                               #
 	;#   This source code contains the intellectual property         #
@@ -600,7 +600,7 @@ ADDSEGMENTANDFILE(i,o)
 	write "#!/bin/bash",!
 	write "#script to add segment for "_segment,!
 	write "ydb_dist="_ydbdist,!
-	write "$ydb_dist/yottadb -r ^GDE <<done",!!
+	write "$ydb_dist/yodadb -r ^GDE <<done",!!
 	write "add -segment "_segment_" -file="_file,!
 	write "add -region  "_segment_" -dynamic="_segment,!
 	write "add -name "_segment_"   -region="_segment,!
@@ -628,7 +628,7 @@ DELSEGMENTANDFILE(i,o)
 	write "#!/bin/bash",!
 	write "#script to delete segment for "_segment,!
 	write "ydb_dist="_ydbdist,!
-	write "$ydb_dist/yottadb -r ^GDE <<done",!!
+	write "$ydb_dist/yodadb -r ^GDE <<done",!!
 	write "delete -segment "_segment,!
 	write "delete -region  "_segment,!
 	write "delete -name "_segment,!

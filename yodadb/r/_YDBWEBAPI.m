@@ -1,7 +1,7 @@
-%YDBWEBAPI ; YottaDB Web Server API Entry Point; 05-07-2021
+%YDBWEBAPI ; YodaDB Web Server API Entry Point; 05-07-2021
 	;#################################################################
 	;#                                                               #
-	;# Copyright (c) 2021 YottaDB LLC and/or its subsidiaries.       #
+	;# Copyright (c) 2021 YodaDB LLC and/or its subsidiaries.       #
 	;# All rights reserved.                                          #
 	;#                                                               #
 	;#   This source code contains the intellectual property         #
@@ -29,11 +29,11 @@ API(%Q,%R,%A)
 	;
 SERVESTATIC(%Q,%R,%A)	
 	N PATH S PATH=$G(%Q("path")) 
-	I PATH="" S PATH="/YottaDB/index.html"
-	I PATH="/" S PATH="/YottaDB/index.html"
-	I PATH="/YottaDB" S PATH="/YottaDB/index.html"
-	I PATH="/YottaDB/" S PATH="/YottaDB/index.html"
-	I $E(PATH,1,9)'="/YottaDB/" D SETERROR^%YDBWEB(404) Q
+	I PATH="" S PATH="/YodaDB/index.html"
+	I PATH="/" S PATH="/YodaDB/index.html"
+	I PATH="/YodaDB" S PATH="/YodaDB/index.html"
+	I PATH="/YodaDB/" S PATH="/YodaDB/index.html"
+	I $E(PATH,1,9)'="/YodaDB/" D SETERROR^%YDBWEB(404) Q
 	N FILEPATHS
 	S FILEPATH="dist/spa/"_$E(PATH,10,$L(PATH))
 	I $P(FILEPATH,".",$L(FILEPATH,"."))["?" D

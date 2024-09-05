@@ -1,7 +1,7 @@
-YDBWEBZSY ; YottaDB system status display; 05-07-2021 
+YDBWEBZSY ; YodaDB system status display; 05-07-2021 
 	;#################################################################
 	;#                                                               #
-	;# Copyright (c) 2021 YottaDB LLC and/or its subsidiaries.       #
+	;# Copyright (c) 2021 YodaDB LLC and/or its subsidiaries.       #
 	;# All rights reserved.                                          #
 	;#                                                               #
 	;#   This source code contains the intellectual property         #
@@ -112,7 +112,7 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^%YDBWEBZU]
 	. N F S F="/proc/"_$J_"/io"
 	. O F:(READONLY:REWIND):0 E  Q
 	. U F
-	. N DONE S DONE=0 ; $ZEOF doesn't seem to work (https://github.com/YottaDB/YottaDB/issues/120)
+	. N DONE S DONE=0 ; $ZEOF doesn't seem to work (https://github.com/YodaDB/YodaDB/issues/120)
 	. N X F  R X:0 U F D  Q:DONE
 	.. I X["read_bytes"  S ^YDBWEB("YDBWEBZSY","XUSYS",$J,"JE","RBYTE")=$P(X,": ",2)
 	.. I X["write_bytes" S ^YDBWEB("YDBWEBZSY","XUSYS",$J,"JE","WBYTE")=$P(X,": ",2) S DONE=1
@@ -189,7 +189,7 @@ HEADER(TAB) ;Display Header
 	; ZEXCEPT: AB
 	W #
 	S IOM=+$$AUTOMARG
-	;W !,"YottaDB System Status users on ",$$DATETIME($H)
+	;W !,"YodaDB System Status users on ",$$DATETIME($H)
 	S TAB(0)=0,TAB(1)=6,TAB(2)=14,TAB(3)=18,TAB(4)=27,TAB(5)=46,TAB(6)=66
 	S TAB(7)=75,TAB(8)=85,TAB(9)=100,TAB(10)=110,TAB(11)=115,TAB(12)=123
 	S TAB(13)=130,TAB(14)=141,TAB(15)=150
@@ -357,9 +357,9 @@ VPE(%OLDSTR,%OLDDEL,%NEWDEL) ; $PIECE extract based on variable length delimiter
 UNIXLSOF(procs) ; [Public] - Get all processes
 	; (return) .procs(n)=unix process number
 	; ZEXCEPT: shell,parse
-	n %cmd s %cmd="lsof -t $ydb_dist/yottadb && lsof -t $ydb_dist/mumps" ;_$view("gvfile","DEFAULT")
-	;s %cmd="ps ax | grep -i yottadb | awk '{print $1}'"
-	i $ZV["CYGWIN" s %cmd="ps -a | grep yottadb | grep -v grep | awk '{print $1}'"
+	n %cmd s %cmd="lsof -t $ydb_dist/yodadb && lsof -t $ydb_dist/mumps" ;_$view("gvfile","DEFAULT")
+	;s %cmd="ps ax | grep -i yodadb | awk '{print $1}'"
+	i $ZV["CYGWIN" s %cmd="ps -a | grep yodadb | grep -v grep | awk '{print $1}'"
 	n oldio s oldio=$IO
 	o "lsof":(shell="/bin/bash":command=%cmd:parse)::"pipe"
 	u "lsof"
