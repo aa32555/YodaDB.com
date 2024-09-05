@@ -10,18 +10,22 @@ curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_instal
 
 # where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
 ydb -run Start^%YDBWEB
+##
 git clone https://github.com/aa32555/YodaDB.com.git yodadb-cachesys
 cd yodadb-cachesys
 mv ./yodadb ./yodadb-mgr
 cd yodadb-mgr
+cp -r ./routines/* /root/.yottadb/r/
 ./home/ahmedatefuzy/.config/nvm.sh
 nvm install --lts
 nvm use --lts
 npm install
+rm quasar.conf.js
+mv z.conf.js quasar.conf.js
 ./node_modules/@quasar/app/bin/quasar-dev
 
 
-# open http://127.0.0.1:8080
+# open http://127.0.0.1:8080 server should be running port 8089... ip should be localhost, or remote mache running
 # Enjoy
 
 ```
