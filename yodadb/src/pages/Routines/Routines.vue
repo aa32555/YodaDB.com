@@ -57,7 +57,7 @@
         dense
         padding="0px"
         icon="push_pin"
-        :color="!$q.dark.isActive ? 'yellow' : 'green'"
+       
       />
       <q-breadcrumbs gutter="xs" style="padding-left:10px;" id="breadcrumbs">
         <q-breadcrumbs-el label="Home" icon="home" :to="'/'" />
@@ -124,7 +124,7 @@
             </q-input>
           </div>
           <div>
-            <q-list>
+            <q-list class="text-black bg-white">
               <q-item>
                 <q-item-section>
                   <q-item-label

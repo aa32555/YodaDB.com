@@ -8,9 +8,7 @@
 
 curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
 
-ydb
-
-d Start^%YDBWEB(1987) ; where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
+ydb d Start^%YDBWEB(1987) ; where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
 
 git clone repo
 npm install
