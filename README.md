@@ -15,7 +15,7 @@ git clone https://github.com/aa32555/YodaDB.com.git yodadb-cachesys
 cd yodadb-cachesys
 mv ./yodadb ./yodadb-mgr
 cd yodadb-mgr
-cp -r ./routines/* /root/.yottadb/r/
+cp -r ./routines /root/.yottadb/r
 ./home/ahmedatefuzy/.config/nvm.sh
 nvm install --lts
 nvm use --lts
