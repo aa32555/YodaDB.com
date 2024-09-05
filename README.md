@@ -1,16 +1,7 @@
 # http://yodadb.com/
-
-
 ## Installing
-
-
 ```sh
-
 curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
-
-# where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
-ydb -run Start^%YDBWEB
-##
 git clone https://github.com/aa32555/YodaDB.com.git yodadb-v0
 cd yodadb-v0
 cd yodadb
@@ -21,12 +12,14 @@ nvm use --lts
 npm install
 rm quasar.conf.js
 mv z.conf.js quasar.conf.js
+ydb -run Start^%YDBWEB
 ./node_modules/@quasar/app/bin/quasar-dev
-
-
-# open http://127.0.0.1:8080 server should be running port 8089... ip should be localhost, or remote mache running
-# Enjoy
-
+#
+# open http://127.0.0.1:3255 server should be running port 8089... ip should be localhost
+# p.s. this installs code-server as well (VSCode)
+# to run it type code-server and open http://127.0.0.1:8080
+# --7amada ... stay tuned, web sockets and termial soon  
+# Enjoy 
 ```
 
 
