@@ -28,3 +28,5 @@ See [LICENSE.md](./LICENSE.md). [coming soon]
 
 Copyright [Yoda Database](https://yodadb.com) and `ydb` contributors. All rights reserved. The [Yoda Database](https://yodadb.com) has registered trademarks and uses trademarks.  For a list of trademarks of the [Yoda Database](https://yodadb.com), please see our [Trademark Policy](http://yodadb.com/)
 
+
+![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/aa.gif)
