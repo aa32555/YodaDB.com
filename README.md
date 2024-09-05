@@ -10,8 +10,10 @@ curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_instal
 
 # where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
 ydb -run Start^%YDBWEB
-git clone https://github.com/aa32555/YodaDB.com.git YodaDB
-cd YodaDB
+git clone https://github.com/aa32555/YodaDB.com.git yodadb-cachesys
+cd yodadb-cachesys
+mv ./yodadb ./yodadb-mgr
+cd yodadb-mgr
 ./home/ahmedatefuzy/.config/nvm.sh
 nvm install --lts
 nvm use --lts
