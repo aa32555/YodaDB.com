@@ -41,6 +41,8 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
 coming soon...
 ```
 
+## Sources for the High School project
+ -https://hps.vi4io.org/_media/teaching/summer_term_2022/pchpc_linux_crash_course_slides.pdf
 
 
 ## License
