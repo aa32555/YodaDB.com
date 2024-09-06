@@ -34,25 +34,20 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
 
 
 
-## Installing
+## How to Install
 
 
 ```sh
-
-curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
-
-# where 1987 is the year Im born but also a port, leave it blank, you're born in 8089
-$ydb_dist/yodadb -run Start^%YDBWEB(1987)
-
+coming soon...
 ```
 
 
 
 ## License
 
-See [LICENSE.md](./LICENSE.md). [coming soon]
+open source, [but details coming soon]
 
 ## Copyright notice
-
+(see above)
 Copyright [Yoda Database](https://yodadb.com) and `ydb` contributors. All rights reserved. The [Yoda Database](https://yodadb.com) has registered trademarks and uses trademarks.  For a list of trademarks of the [Yoda Database](https://yodadb.com), please see our [Trademark Policy](http://yodadb.com/)
 
