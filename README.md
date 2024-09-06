@@ -2,13 +2,12 @@
 ## Installing
 ```sh
 curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
+apt-get install npm node 
+# or => nvm install --lts && nvm use --lts
 git clone https://github.com/aa32555/YodaDB.com.git yodadb-v0
 cd yodadb-v0
 cd yodadb
 cp -r ./r /root/.yottadb
-./home/ahmedatefuzy/.config/nvm.sh
-nvm install --lts
-nvm use --lts
 npm install
 rm quasar.conf.js
 mv z.conf.js quasar.conf.js
