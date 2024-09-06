@@ -2,7 +2,7 @@
 ## Installing
 ```sh
 apt-get update
-curl -o- https://raw.githubusercontent.com/aa32555/yoda/main/yodadatabase_install_per_order_of_the_king.sh | bash
+curl -o- https://raw.githubusercontent.com/aa32555/yodadb/main/install.sh | bash
 apt-get install npm node 
 # or => nvm install --lts && nvm use --lts
 #
