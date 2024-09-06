@@ -13,24 +13,5 @@
 	Q
 	;
 	;
-    ; return 1 0r 0 
-idir(PATH) 	 Q $$DirectoryExists^%YDBUTILS2(.PATH)         ;// if dir command
-imkdir(PATH) Q $$CreateDirectoryTree^%YDBUTILS2(.PATH)
-
-
-
-
-shell(COMMAND,RET) 	D RunShellCommand^%YDBUTILS2(.COMMAND,.RET) Q
-CreateDirectoryTree(PATH) 		Q $$CreateDirectoryTree^%YDBUTILS2(.PATH)
-GetRoutineList(RTNS,PATTERN) 	D GetRoutineList^%YDBUTILS2(.RTNS,.PATTERN) Q
-GetGlobalList(GLBLS,PATTERN)	D GetGlobalList^%YDBUTILS2(.GLBLS,.PATTERN) Q
-FileExists(PATH)				Q $$FileExists^%YDBUTILS2(.PATH)
-ReadFileByLine(FILE,RET)		D ReadFileByLine^%YDBUTILS2(.FILE,.RET) Q
-ReadFileByChunk(FILE,CHUNK,RET) D ReadFileByChunk^%YDBUTILS2(.FILE,.CHUNK,.RET) Q
-WriteFile(FILE,DATA)			D WriteFile^%YDBUTILS2(.FILE,.DATA) Q
-UP(STR)							Q $$UP^%YDBUTILS2(.STR)
-LOW(STR)						Q $$LOW^%YDBUTILS2(.STR)
-RoutinePaths(RET)				D RoutinePaths^%YDBUTILS1(.RET) Q
-DeleteFile(FILE)				D DeleteFile^%YDBUTILS1(.FILE) Q
-EncodeJSON(ARRAY,OUTPUT)		D ENCODE^%YDBWEB($NA(ARRAY),$NA(OUTPUT)) Q 
-DecodeJSON(IJSON,OUTPUT)		D DECODE^%YDBWEB($NA(IJSON),$NA(OUTPUT)) Q
+	; 
+mkdir(path,return) d mkdir^%YDBUTILS77(path,.return) q
