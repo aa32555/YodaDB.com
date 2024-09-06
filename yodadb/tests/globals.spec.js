@@ -58,7 +58,7 @@ describe("Globals Module Tests", async () => {
 
 
   it("Creating Global ^YDBGLBLMDLTST", async () =>{
-    exec("$ydb_dist/yodadb -run TESTADDGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
+    exec("ydb -run TESTADDGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
       if (error) {
           throw new Error (error)
       }
@@ -149,7 +149,7 @@ it("Saving the new value of the global", async () =>{
 })
 
 it("Checking that the new value is reflected in the database", async () =>{
-  exec("$ydb_dist/yodadb -run TESTCHECKGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
+  exec("ydb -run TESTCHECKGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
     if (error) {
         throw new Error (error)
     }
@@ -182,7 +182,7 @@ it("Selecting ^YDBGLBLMDLTST from the globals list", async () =>{
 
 
 it("Creating Global ^YDBGLBLMDLTST thru the databse", async () =>{
-  exec("$ydb_dist/yodadb -run TESTADDGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
+  exec("ydb -run TESTADDGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
     if (error) {
         throw new Error (error)
     }
@@ -230,7 +230,7 @@ it("Killing the global from the gui", async () =>{
 
 
 it("Checking with the database that the global is killed", async () =>{
-  exec("$ydb_dist/yodadb -run TESTCHECKKILLEDGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
+  exec("ydb -run TESTCHECKKILLEDGLOBAL^%YDBWEBGLBLS", async (error, stdout, stderr) => {
     if (error) {
         throw new Error (error)
     }

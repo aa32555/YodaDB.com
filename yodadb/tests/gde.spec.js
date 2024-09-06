@@ -402,7 +402,7 @@ describe("GDE Module Tests", async () => {
   });
 
   it("Checking that the database file is not created", async () => {
-    let response = await run_shell_command(`$ydb_dist/yodadb -run ^%XCMD 'write $zsearch("./tests/ydbtest.dat")]""'`)
+    let response = await run_shell_command(`ydb -run ^%XCMD 'write $zsearch("./tests/ydbtest.dat")]""'`)
     expect(
       parseInt(response.stdout)
     ).to.equal(0);
@@ -451,7 +451,7 @@ describe("GDE Module Tests", async () => {
 
   it("Checking that the database file is created", async () => {
     await delay(500);
-    let response = await run_shell_command(`$ydb_dist/yodadb -run ^%XCMD 'write $zsearch("./tests/ydbtest.dat")]""'`)
+    let response = await run_shell_command(`ydb -run ^%XCMD 'write $zsearch("./tests/ydbtest.dat")]""'`)
     expect(
       parseInt(response.stdout)
     ).to.equal(1);
@@ -459,7 +459,7 @@ describe("GDE Module Tests", async () => {
 
   it("Checking that the new record size for [region] YDBTEST is of length 1048576 characters", async () => {
     await delay(500);
-    let response = await run_shell_command(`$ydb_dist/yodadb -run ^%XCMD 'set ^YDBTEST=" ",$zpiece(^YDBTEST," ",1048576)=" " write $zlength(^YDBTEST) kill ^YDBTEST'`)
+    let response = await run_shell_command(`ydb -run ^%XCMD 'set ^YDBTEST=" ",$zpiece(^YDBTEST," ",1048576)=" " write $zlength(^YDBTEST) kill ^YDBTEST'`)
     expect(
       parseInt(response.stdout)
     ).to.equal(1048576);
@@ -467,7 +467,7 @@ describe("GDE Module Tests", async () => {
 
   it("Checking that the new key size for [region] YDBTEST is of length 1000 characters", async () => {
     await delay(500);
-    let response = await run_shell_command(`$ydb_dist/yodadb -run ^%XCMD 'set a=" ",$zpiece(a," ",1000)=" " set ^YDBTEST(a)=$zlength(a) write ^YDBTEST(a) kill ^YDBTEST'`)
+    let response = await run_shell_command(`ydb -run ^%XCMD 'set a=" ",$zpiece(a," ",1000)=" " set ^YDBTEST(a)=$zlength(a) write ^YDBTEST(a) kill ^YDBTEST'`)
     expect(
       parseInt(response.stdout)
     ).to.equal(1000);
@@ -524,7 +524,7 @@ describe("GDE Module Tests", async () => {
   });
 
   it("Checking that the database file is still there", async () => {
-    let response = await run_shell_command(`$ydb_dist/yodadb -run ^%XCMD 'write $zsearch("./tests/ydbtest.dat")]""'`)
+    let response = await run_shell_command(`ydb -run ^%XCMD 'write $zsearch("./tests/ydbtest.dat")]""'`)
     expect(
       parseInt(response.stdout)
     ).to.equal(1);
@@ -548,7 +548,7 @@ describe("GDE Module Tests", async () => {
     await delay(1500);
     await run_shell_command(`$ydb_dist/mupip create`)
     await delay(1500)
-    await run_shell_command(`$ydb_dist/yodadb -run 'do Stop^%YDBWEB hang 1 d Start^%YDBWEB'`)
+    await run_shell_command(`ydb -run 'do Stop^%YDBWEB hang 1 d Start^%YDBWEB'`)
 
   });
 

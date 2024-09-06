@@ -114,8 +114,8 @@ JOBEXAM(%ZPOS) ; [Public; Called by ^%YDBWEBZU]
 	. U F
 	. N DONE S DONE=0 ; $ZEOF doesn't seem to work (https://github.com/YodaDB/YodaDB/issues/120)
 	. N X F  R X:0 U F D  Q:DONE
-	.. I X["read_bytes"  S ^YDBWEB("YDBWEBZSY","XUSYS",$J,"JE","RBYTE")=$P(X,": ",2)
-	.. I X["write_bytes" S ^YDBWEB("YDBWEBZSY","XUSYS",$J,"JE","WBYTE")=$P(X,": ",2) S DONE=1
+	. . I X["read_bytes"  S ^YDBWEB("YDBWEBZSY","XUSYS",$J,"JE","RBYTE")=$P(X,": ",2)
+	. . I X["write_bytes" S ^YDBWEB("YDBWEBZSY","XUSYS",$J,"JE","WBYTE")=$P(X,": ",2) S DONE=1
 	. U OLDIO C F
 	;
 	; Capture String Pool Stats: Full size - Freed Data
@@ -164,7 +164,7 @@ WORK(MODE,FILTER) ; [Private] Main driver, Will release lock
 	I USERS D
 	. ;D HEADER(.TAB),
 	. ; PID   PName   Device       Routine                                CPU Time
-	.  D USHOW(.TAB,.SORT,.FILTER)
+	. D USHOW(.TAB,.SORT,.FILTER)
 	. ;W !!,"Total ",USERS," user",$S(USERS>1:"s.",1:"."),!
 	. Q
 	;E  W !,"No current GT.M users.",!
@@ -244,7 +244,7 @@ FILTROUT(FILTER,RTNNAME,PID) ; [Private] Should this item be filtered out?
 	. i rtnName[" " s rtnName=$p(rtnName," ")
 	. n each s each=""
 	. f  s each=$o(FILTER(each)) q:each=""  do  q:found
-	.. i $d(FILTER(rtnName)) s found=1
+	. . i $d(FILTER(rtnName)) s found=1
 	;
 	; If we find it, we don't want to filter it out. ;
 	QUIT 'found
@@ -308,9 +308,9 @@ UNIX(MODE,USERS,SORT) ;PUG/TOAD,FIS/KSB,VEN/SMH - Kernel System Status Report fo
 	. ; ZEXCEPT: COMMAND,READONLY,SHELL
 	. O "ps":(SHELL="/bin/sh":COMMAND=CMD:READONLY)::"PIPE" U "ps"
 	. F  R %TEXT Q:$ZEO  D
-	.. S %LINE=$$VPE(%TEXT," ",U) ; parse each line of the ps output
-	.. Q:$P(%LINE,U)="PID"  ; header line
-	.. D JOBSET(%LINE,MODE,.USERS,.SORT)
+	. . S %LINE=$$VPE(%TEXT," ",U) ; parse each line of the ps output
+	. . Q:$P(%LINE,U)="PID"  ; header line
+	. . D JOBSET(%LINE,MODE,.USERS,.SORT)
 	. U %I C "ps"
 	Q
 	;
@@ -357,7 +357,7 @@ VPE(%OLDSTR,%OLDDEL,%NEWDEL) ; $PIECE extract based on variable length delimiter
 UNIXLSOF(procs) ; [Public] - Get all processes
 	; (return) .procs(n)=unix process number
 	; ZEXCEPT: shell,parse
-	n %cmd s %cmd="lsof -t $ydb_dist/yodadb && lsof -t $ydb_dist/mumps" ;_$view("gvfile","DEFAULT")
+	n %cmd s %cmd="lsof -t ydb && lsof -t $ydb_dist/mumps" ;_$view("gvfile","DEFAULT")
 	;s %cmd="ps ax | grep -i yodadb | awk '{print $1}'"
 	i $ZV["CYGWIN" s %cmd="ps -a | grep yodadb | grep -v grep | awk '{print $1}'"
 	n oldio s oldio=$IO

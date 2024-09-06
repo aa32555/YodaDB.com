@@ -66,9 +66,9 @@ ydb-gui-test:
     - mkdir -p tests/results
     - npm install
     - npm run build
-    - export ydb_routines=`$ydb_dist/yodadb -run %XCMD 'W $P($P($ZRO,"(",1,2),")")_" "_"$PWD/routines"_")"_$P($ZRO,")",2,$L($ZRO,")"))'` 
+    - export ydb_routines=`ydb -run %XCMD 'W $P($P($ZRO,"(",1,2),")")_" "_"$PWD/routines"_")"_$P($ZRO,")",2,$L($ZRO,")"))'` 
     - export ydb_zinterrupt="I \$\$JOBEXAM^%YDBWEBZU(\$ZPOSITION)"
-    - $ydb_dist/yodadb -run Start^%YDBWEB
+    - ydb -run Start^%YDBWEB
     - ./tools/ci/test.sh
   artifacts:
     paths:

@@ -132,7 +132,7 @@ describe("Routines Module Tests", async () => {
   })
 
   it("Executing D TEST^YDBWEBRTNSTEST, expecting 1", async () =>{
-    exec("$ydb_dist/yodadb -run %XCMD 'D TEST^YDBWEBRTNSTEST'", (error, stdout, stderr) => {
+    exec("ydb -run %XCMD 'D TEST^YDBWEBRTNSTEST'", (error, stdout, stderr) => {
       if (error) {
           throw new Error (error)
       }

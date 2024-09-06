@@ -145,7 +145,7 @@ it("Navigating back to the process list", async () => {
 
 let processID
 it("Creating a new process in the database and navigating to it", async () => {
-  processID = await run_shell_command("$ydb_dist/yodadb -run TestLongProcess^%YDBWEBPRSC")
+  processID = await run_shell_command("ydb -run TestLongProcess^%YDBWEBPRSC")
   await delay(500)
   let link = await page.$("#btn-refresh")
   await link.click()
@@ -173,7 +173,7 @@ it("Creating a new process in the database and navigating to it", async () => {
   });
 
   it("Checking with the OS that the process has been killed", async () => {
-    let status = await run_shell_command(`$ydb_dist/yodadb -run ^%XCMD 'write $zgetjpi(${processID.stdout},"isprocalive")'`)
+    let status = await run_shell_command(`ydb -run ^%XCMD 'write $zgetjpi(${processID.stdout},"isprocalive")'`)
     expect(Number(parseInt(status.stdout))).to.equal(0)
   });
 

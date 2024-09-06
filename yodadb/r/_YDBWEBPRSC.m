@@ -14,7 +14,7 @@
 	;
 GETPROCESSLIST(I,O)
 	N R S R=$NA(O("data"))
-	N A D RunShellCommand^%YDBUTILS("$ydb_dist/yodadb -run ^%YDBWEBZSY "_$J,.A)
+	N A D RunShellCommand^%YDBUTILS("ydb -run ^%YDBWEBZSY "_$J,.A)
 	I '$D(A) S @R@("STATUS")="false" Q
 	N B,PID,PN,DV,RTN,CTM,I
 	S B="" F  S B=$O(A(B)) Q:B=""  D
@@ -45,11 +45,11 @@ PROCESSDETAILS(I,O)
 	N PID S PID=$G(I("data","PID")) I PID="" S @R@("STATUS")="false" Q
 	I PID'?1.N S @R@("STATUS")="false" Q
 	I '$ZGETJPI(PID,"isprocalive") S @R@("STATUS")="false" Q
-	N A D RunShellCommand^%YDBUTILS("$ydb_dist/yodadb -run PROCESSDETAILS^%YDBWEBZSY "_PID,.A)
+	N A D RunShellCommand^%YDBUTILS("ydb -run PROCESSDETAILS^%YDBWEBZSY "_PID,.A)
 	M @R@("DETAILS")=A K ^A M ^A=A
-	K A D RunShellCommand^%YDBUTILS("$ydb_dist/yodadb -run PROCESSDETAILS^%YDBWEBZSY "_PID_" "_"V",.A)
+	K A D RunShellCommand^%YDBUTILS("ydb -run PROCESSDETAILS^%YDBWEBZSY "_PID_" "_"V",.A)
 	M @R@("VARIABLES")=A
-	K A D RunShellCommand^%YDBUTILS("$ydb_dist/yodadb -run PROCESSDETAILS^%YDBWEBZSY "_PID_" "_"I",.A)
+	K A D RunShellCommand^%YDBUTILS("ydb -run PROCESSDETAILS^%YDBWEBZSY "_PID_" "_"I",.A)
 	M @R@("IVARIABLES")=A
 	S @R@("STATUS")="true" 
 	Q
