@@ -13,8 +13,14 @@
 	Q
 	;
 	;
-RunShellCommand(COMMAND,RET) 	D RunShellCommand^%YDBUTILS2(.COMMAND,.RET) Q
-DirectoryExists(PATH) 			Q $$DirectoryExists^%YDBUTILS2(.PATH)
+    ; return 1 0r 0 
+idir(PATH) 	 Q $$DirectoryExists^%YDBUTILS2(.PATH)         ;// if dir command
+imkdir(PATH) Q $$CreateDirectoryTree^%YDBUTILS2(.PATH)
+
+
+
+
+shell(COMMAND,RET) 	D RunShellCommand^%YDBUTILS2(.COMMAND,.RET) Q
 CreateDirectoryTree(PATH) 		Q $$CreateDirectoryTree^%YDBUTILS2(.PATH)
 GetRoutineList(RTNS,PATTERN) 	D GetRoutineList^%YDBUTILS2(.RTNS,.PATTERN) Q
 GetGlobalList(GLBLS,PATTERN)	D GetGlobalList^%YDBUTILS2(.GLBLS,.PATTERN) Q
