@@ -17,7 +17,7 @@
       elevated
       class="text-white"
       height-hint="61.59"
-      :style="theme==='light'?'background: #FA780A':'background: #3C176A'"
+      :style="theme==='light'?'background: #FFFFFF':'background: #000000'"
     >
       <q-toolbar class="q-py-sm q-px-md">
 
@@ -31,7 +31,7 @@
         >
           <q-avatar size="42px">
             <img
-              src="~assets/logo.png"
+              src="~assets/ksa-light.png"
               class="rotating"
               style="background-color:white;"
             />
@@ -63,6 +63,9 @@
 
       <div class="text-h2" style="opacity:.4">
         Oops. Nothing here...
+        <h4>
+          <a href="yodadb.com">YodaDB</a>
+          </h4>
       </div>
 
       <q-btn
