@@ -6,6 +6,10 @@
  echo "حمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير"
  echo "www.YodaDb.com"
  echo "github.com/aa32555" 
+ echo "\n\n\n\n\n"
+ echo "must be run as root"
+ echo "this installs the server database GT.M...YottaDB"
+ echo "\n\n\n\n\n"
  apt-get update
  apt-get install -yq git wget gnupg
  apt-get -y install tzdata pkg-config lsof procps
@@ -21,8 +25,14 @@
  mkdir -p /tmp/tmp && cd /tmp/tmp
  wget -o- https://download.yottadb.com/ydbinstall.sh && chmod +x ydbinstall.sh
  ./ydbinstall.sh --verbose --utf8 --octo
- mkdir -p /root/.yottadb/yodadbdotcom && cd /root/.yottadb/yodadbdotcom
- git clone https://www.github.com/aa32555/YodaDB.com.git ydb
- cd ydb
- npm install
- ./node_modules/@quasar/app/bin/quasar-dev
+ echo "\n\n\n\n\n"
+ echo " # replace /root/ydbcom/yodadb/r with your path to r"
+ echo "     export ydb_routines=`ydb -run %XCMD 'W $P($P($ZRO,\"(\",1,2),\")\")_\" \"_\"\/root\/ydbcom\/yodadb\/r\"_\")\"_$P($ZRO,\")\",2,$L($ZRO,\")\"))'`" 
+ echo " # needed for the web %SS"
+ echo " # put this in the begining of the routine to see the details  as well"
+ echo " # this is for future startup routinfs ...se _YDBWEB.,m for details"
+ echo "     export ydb_zinterrupt=\"I $$JOBEXAM^%YDBWEBZU($ZPOSITION)\""
+ echo " # replace 5012 with whatever port, default is 8089"
+ echo "     ydb -run \"Start^%YDBWEB 5012\""
+ echo "     ydb -run \"Check^%YDBWEB\" > yodadb-webserver-startup.txt\""
+ echo "\n\n\n\n\n"
