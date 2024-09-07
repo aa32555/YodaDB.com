@@ -105,19 +105,20 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
  * Browser:
 
  ```bash       
+            
             # install node version manager nvm so we can have different everything node, npm, life, u know...
             wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
             # restart your shell-- ( or just reboot if you are a mac user)
             nvm install --lts
             nvm use --lts
             # clone to repo
-            git clone repo
+            git clone rhttps://www.github.com/aa325555/YodaDB.com ydbcom 
+            cd ydbcom/yodadb
             npm install
             ./node_modules/@quasar/app/bon/quasar-dev # to develop, etc.
             # read more at quasar.dev
  ```
    
-
 ## License
 
 open source, [but details coming soon]
