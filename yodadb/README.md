@@ -80,15 +80,15 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
          echo " # put this in the begining of the routine to see the details  as well"
          echo " # this is for future startup routinfs ...se _YDBWEB.,m for details"
          echo "     export ydb_zinterrupt=\"I $$JOBEXAM^%YDBWEBZU($ZPOSITION)\""
-         echo " # replace 5012 with whatever port, default is 8089"
-         echo "     ydb -run \"Start^%YDBWEB 5012\""
+         echo " # replace 3255 with whatever port, default is 8089"
+         echo "     ydb -run \"Start^%YDBWEB 3255\""
          echo "     ydb -run \"Check^%YDBWEB\" > yodadb-webserver-startup.txt\""
          echo "=================================================================================================================================="
 ```
 
 
   * 2 - update the startup shell file ~/.bashrc wuth the following, 
-     assuming you want to auto start the server at port 5012
+     assuming you want to auto start the server at port 3255
 
 ```bash
       # replace /root/ydbcom/yodadb/r with your path to r  
@@ -97,15 +97,14 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
       # put this in the begining of the routine to see the details  as well
       # this is for future startup routinfs ...se _YDBWEB.,m for details
       export ydb_zinterrupt="I $$JOBEXAM^%YDBWEBZU($ZPOSITION)"
-      # replace 5012 with whatever port, default is 8089
-      ydb -run "Start^%YDBWEB 5012"
+      # replace 3255 with whatever port, default is 8089
+      ydb -run "Start^%YDBWEB 3255"
       ydb -run "Check^%YDBWEB" > yodadb-webserver-startup.txt
 ```
 
  * Browser:
 
  ```bash       
-            
             # install node version manager nvm so we can have different everything node, npm, life, u know...
             wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
             # restart your shell-- ( or just reboot if you are a mac user)
@@ -118,7 +117,7 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
             ./node_modules/@quasar/app/bon/quasar-dev # to develop, etc.
             # read more at quasar.dev
  ```
-   
+
 ## License
 
 open source, [but details coming soon]

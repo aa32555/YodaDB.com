@@ -80,15 +80,15 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
          echo " # put this in the begining of the routine to see the details  as well"
          echo " # this is for future startup routinfs ...se _YDBWEB.,m for details"
          echo "     export ydb_zinterrupt=\"I $$JOBEXAM^%YDBWEBZU($ZPOSITION)\""
-         echo " # replace 5012 with whatever port, default is 8089"
-         echo "     ydb -run \"Start^%YDBWEB 5012\""
+         echo " # replace 3255 with whatever port, default is 8089"
+         echo "     ydb -run \"Start^%YDBWEB 3255\""
          echo "     ydb -run \"Check^%YDBWEB\" > yodadb-webserver-startup.txt\""
          echo "=================================================================================================================================="
 ```
 
 
   * 2 - update the startup shell file ~/.bashrc wuth the following, 
-     assuming you want to auto start the server at port 5012
+     assuming you want to auto start the server at port 3255
 
 ```bash
       # replace /root/ydbcom/yodadb/r with your path to r  
@@ -97,8 +97,8 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
       # put this in the begining of the routine to see the details  as well
       # this is for future startup routinfs ...se _YDBWEB.,m for details
       export ydb_zinterrupt="I $$JOBEXAM^%YDBWEBZU($ZPOSITION)"
-      # replace 5012 with whatever port, default is 8089
-      ydb -run "Start^%YDBWEB 5012"
+      # replace 3255 with whatever port, default is 8089
+      ydb -run "Start^%YDBWEB 3255"
       ydb -run "Check^%YDBWEB" > yodadb-webserver-startup.txt
 ```
 
