@@ -40,9 +40,9 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
   * Server:
       * 1-Script:
 ```sh
-       curl  https://raw.githubusercontent.com/aa32555/YodaDB.com/main/install.sh > install.sh
-       chmod +x install.sh
-       ./install.sh
+      curl  https://raw.githubusercontent.com/aa32555/YodaDB.com/main/install.sh > install.sh
+      chmod +x install.sh
+      ./install.sh
 ```
    * or 1-manual:
 ```bash
@@ -54,10 +54,10 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
          echo "حمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير"
          echo "www.YodaDb.com"
          echo "github.com/aa32555" 
-         echo "\n\n\n\n\n"
+         echo "=================================================="
          echo "must be run as root"
          echo "this installs the server database GT.M...YottaDB"
-         echo "\n\n\n\n\n"
+         echo "=================================================="
          apt-get update
          apt-get install -yq git wget gnupg
          apt-get -y install tzdata pkg-config lsof procps
@@ -72,8 +72,8 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
          apt install libgcrypt20-dev
          mkdir -p /tmp/tmp && cd /tmp/tmp
          wget -o- https://download.yottadb.com/ydbinstall.sh && chmod +x ydbinstall.sh
-         ./ydbinstall.sh --verbose --utf8 --octo
-         echo "\n\n\n\n\n"
+         ./ydbinstall.sh --verbose --utf8 --octo --overwrite-existing
+         echo "=================================================================================================================================="
          echo " # replace /root/ydbcom/yodadb/r with your path to r"
          echo "     export ydb_routines=`ydb -run %XCMD 'W $P($P($ZRO,\"(\",1,2),\")\")_\" \"_\"\/root\/ydbcom\/yodadb\/r\"_\")\"_$P($ZRO,\")\",2,$L($ZRO,\")\"))'`" 
          echo " # needed for the web %SS"
@@ -83,7 +83,7 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
          echo " # replace 5012 with whatever port, default is 8089"
          echo "     ydb -run \"Start^%YDBWEB 5012\""
          echo "     ydb -run \"Check^%YDBWEB\" > yodadb-webserver-startup.txt\""
-         echo "\n\n\n\n\n"
+         echo "=================================================================================================================================="
 ```
 
 
