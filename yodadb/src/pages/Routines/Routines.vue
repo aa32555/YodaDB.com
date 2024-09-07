@@ -1,7 +1,7 @@
 <!--
 #################################################################
 #                                                               #
-# Copyright (c) 2021-2022 YodaDB LLC and/or its subsidiaries.  #
+# Copyright (c) 2021 YodaDB LLC and/or its subsidiaries.       #
 # All rights reserved.                                          #
 #                                                               #
 #   This source code contains the intellectual property         #
@@ -21,7 +21,7 @@
         size="md"
         padding="0px"
         style="margin-right:15px;margin-top:10px"
-        :color="!$q.dark.isActive ? 'white' : 'green'"
+        :color="!$q.dark.isActive ? 'purple' : 'orange'"
         flat
         ><q-tooltip>Delete Routine?</q-tooltip></q-btn
       >
@@ -32,7 +32,7 @@
         size="md"
         padding="0px"
         style="margin-right:15px;margin-top:10px"
-        :color="!$q.dark.isActive ? 'yellow' : 'green'"
+        :color="!$q.dark.isActive ? 'purple' : 'orange'"
         flat
         ><q-tooltip>Save Routine?</q-tooltip></q-btn
       >
@@ -43,7 +43,7 @@
         padding="0px"
         size="md"
         style=";margin-top:10px"
-        :color="!$q.dark.isActive ? 'yellow' : 'green'"
+        :color="!$q.dark.isActive ? 'purple' : 'orange'"
         flat
         ><q-tooltip>Create Routine?</q-tooltip></q-btn
       >
@@ -57,22 +57,14 @@
         dense
         padding="0px"
         icon="push_pin"
-       
+        :color="!$q.dark.isActive ? 'purple' : 'orange'"
       />
       <q-breadcrumbs gutter="xs" style="padding-left:10px;" id="breadcrumbs">
-        <q-breadcrumbs-el label="Home" icon="home" :to="'/'" />
+        <q-breadcrumbs-el label="Home" icon="home" :to="'/'"/>
+        <q-breadcrumbs-el label="Routines" icon="description" :to="'/routines'"/>
         <q-breadcrumbs-el
-          label="Routines"
-          icon="description"
-          :to="'/routines'"
-        />
-        <q-breadcrumbs-el
-          v-if="tabData && tabData[tab] && tabData[tab].path"
-          :label="
-            tabData[tab].path + tabData[tab].name
-              ? tabData[tab].path + tabData[tab].name + '.m'
-              : ''
-          "
+         v-if="tabData && tabData[tab] && tabData[tab].path"
+          :label="tabData[tab].path + tabData[tab].name ? tabData[tab].path + tabData[tab].name + '.m' : ''"
           :to="'/routines'"
         />
       </q-breadcrumbs>
@@ -85,7 +77,12 @@
     >
       <template v-slot:before>
         <span
-          id="routines_header"
+         id="routines_header"
+          :class="
+            $q.dark.isActive
+              ? 'text-orange text-center'
+              : 'text-purple text-center'
+          "
           style="font-size:28px;padding:25px"
         >
           Routines
@@ -99,7 +96,7 @@
         >
           <div class="q-pa-md">
             <q-input
-              input-class="routine_search_input"
+            input-class="routine_search_input"
               filled
               bottom-slots
               v-model="searchRoutines"
@@ -124,27 +121,19 @@
             </q-input>
           </div>
           <div>
-            <q-list class="text-black bg-white">
+            <q-list>
               <q-item>
                 <q-item-section>
                   <q-item-label
                     id="routine_count_section"
                     overline
+                    :class="$q.dark.isActive ? 'text-orange' : 'text-purple'"
                     >{{ routineTotal }} Routines</q-item-label
                   >
-
-                  <q-item-label>
-                    <div class="q-gutter-sm">
-                    
-                      <q-checkbox
-                        size="xs"
-                        dense
-                        v-model="showsys"
-                        label=""
-                      />
-                        <q-btn :id="'showsyscheckbox'" dense size="xs" flat label="System routines" @click="showsys=!showsys" />
-                      </div
-                  ></q-item-label>
+                  <!--
+                  <q-item-label
+                    >in {{ routinesPaths.length }} location(s)</q-item-label
+                  >-->
                 </q-item-section>
               </q-item>
               <div
@@ -153,22 +142,13 @@
                 :key="'rlist-' + index"
               >
                 <q-item
-                  :ripple="false"
+                :ripple="false"
                   @click="populateRoutine(rtn)"
                   :active="getCurrentActiveRoutine(rtn.r)"
                   dense
                 >
                   <q-item-section>
-                    <q-item-label
-                      ><q-btn
-                      no-caps
-                        flat
-                        class="full-width"
-                        @click="populateRoutine(rtn)"
-                        :id="'column-' + rtn.r"
-                        >{{ rtn.r }}</q-btn
-                      ></q-item-label
-                    >
+                    <q-item-label><q-btn flat class="full-width" @click="populateRoutine(rtn)" :id="'column-' + rtn.r">{{ rtn.r }}</q-btn></q-item-label>
                   </q-item-section>
                   <!--
                   <q-item-section side>
@@ -199,33 +179,35 @@
 
       <template v-slot:after>
         <div class="q-pa-xs">
-          <q-tabs
-            v-model="tab"
-            inline-label
-            outside-arrows
-            dense
-            align="left"
-           
-            :breakpoint="0"
+        <q-tabs
+          v-model="tab"
+          inline-label
+          outside-arrows
+          dense
+          align="left"
+          :class="
+            $q.dark.isActive ? 'text-orange text-bold' : 'text-purple text-bold'
+          "
+          :breakpoint="0"
+        >
+          <q-tab
+            ripple
+            no-caps
+            v-for="tab in tabs"
+            :key="tab.name"
+            v-bind="tab"
           >
-            <q-tab
-              ripple
-              no-caps
-              v-for="tab in tabs"
-              :key="tab.name"
-              v-bind="tab"
-            >
-              <q-btn
-                dense
-                padding="5px"
-                flat
-                size="sm"
-                icon="close"
-                @click="closeTab(tab.name)"
-                :disable="tabs.length === 1"
-              />
-            </q-tab>
-          </q-tabs>
+            <q-btn
+              dense
+              padding="5px"
+              flat
+              size="sm"
+              icon="close"
+              @click="closeTab(tab.name)"
+              :disable="tabs.length === 1"
+            />
+          </q-tab>
+        </q-tabs>
         </div>
         <codemirror
           :key="'code-panel' + tablekey"
@@ -243,17 +225,15 @@
     <q-dialog v-model="loadingDialog" persistent>
       <q-card style="height:185px;width:300px">
         <q-card-section class="q-pa-md">
-          <span
-            style="font-size:18px;"
-            class="flex flex-center"
-            id="routines_loader_modal"
+          <span style="font-size:18px;" class="flex flex-center"
+          id="routines_loader_modal"
             >Loading Routines. Please wait!</span
           >
         </q-card-section>
         <q-card-section class="q-pa-md">
           <div class="flex flex-center">
             <q-spinner-dots
-              :color="$q.dark.isActive ? 'yellow' : 'green'"
+              :color="$q.dark.isActive ? 'purple' : 'orange'"
               size="6em"
               v-if="loading"
               :thickness="0"
@@ -292,7 +272,7 @@
             label="Routine Location*"
           />
         </q-card-section>
-        <q-card-actions align="right" class="text-white">
+        <q-card-actions align="right" class="text-primary">
           <q-btn
             flat
             label="Cancel"
@@ -330,11 +310,10 @@ export default {
       searchRoutines: "*",
       shownRoutineList: [],
       shownRoutineIndex: 0,
-      showsys: false,
       routinePatchCount: 100,
       finishedLoadingAllRoutines: false,
       cmOptions: {
-        autofocus: true,
+        autofocus:true,
         tabSize: 4,
         mode: {
           name: "mumps"
@@ -520,8 +499,7 @@ export default {
       this.shownRoutineIndex = 0;
       this.finishedLoadingAllRoutines = false;
       let data = await this.$M("GETROUTINESLIST^%YDBWEBRTNS", {
-        PATTERN: this.searchRoutines,
-        SYS: this.showsys
+        PATTERN: this.searchRoutines
       });
       if (data && data.RTOTAL) {
         this.routineTotal = data.RTOTAL;
@@ -530,6 +508,7 @@ export default {
       }
       if (data && data.RLIST) {
         this.routinesList = data.RLIST;
+        
       } else {
         this.routinesList = [];
       }
@@ -684,12 +663,6 @@ export default {
     }
   },
   watch: {
-    async showsys(v) {
-        await this.getRoutines();
-        if (this.shownRoutineList[0]) {
-          this.populateRoutine(this.shownRoutineList[0]);
-        }
-    },
     splitterModel(v) {
       if (v === 0) {
         this.collapsed = true;
