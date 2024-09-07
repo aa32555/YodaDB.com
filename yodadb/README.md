@@ -40,6 +40,23 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
 ```sh
 coming soon...
 ```
+## How to run the server to get the connection details
+
+ * update the startup shell file ~/.bashrc wuth the following, 
+     assuming you want to auto start the server at port 5012
+
+```bash
+# replace /root/ydbcom/yodadb/r with your path to r  
+export ydb_routines=`ydb -run %XCMD 'W $P($P($ZRO,"(",1,2),")")_" "_"/root/ydbcom/yodadb/r"_")"_$P($ZRO,")",2,$L($ZRO,")"))'` 
+# needed for the web %SS
+# put this in the begining of the routine to see the details  as well
+# this is for future startup routinfs ...se _YDBWEB.,m for details
+export ydb_zinterrupt="I $$JOBEXAM^%YDBWEBZU($ZPOSITION)"
+# replace 5012 with whatever port, default is 8089
+ydb -run "Start^%YDBWEB 5012"
+ydb -run "Check^%YDBWEB" > yodadb-webserver-startup.txt
+```
+
 
 
 

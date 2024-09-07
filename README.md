@@ -41,6 +41,22 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
 coming soon...
 ```
 
+## how to run
+
+```bash
+# replace /root/ydbcom/yodadb/r with your path to r  
+export ydb_routines=`ydb -run %XCMD 'W $P($P($ZRO,"(",1,2),")")_" "_"/root/ydbcom/yodadb/r"_")"_$P($ZRO,")",2,$L($ZRO,")"))'` 
+# needed for the web %SS
+# put this in the begining of the routine to see the details  as well
+# this is for future startup routinfs ...se _YDBWEB.,m for details
+export ydb_zinterrupt="I $$JOBEXAM^%YDBWEBZU($ZPOSITION)"
+# replace 5012 with whatever port, default is 8089
+ydb -run "Start^%YDBWEB 5012"
+ydb -run "Check^%YDBWEB" > yodadb-webserver-startup.txt
+
+```
+
+
 ## Sources for the High School project
  -https://hps.vi4io.org/_media/teaching/summer_term_2022/pchpc_linux_crash_course_slides.pdf
 

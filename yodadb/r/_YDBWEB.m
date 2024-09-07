@@ -21,6 +21,10 @@ ROUTES
 	Q	
 	;
 Start(PORT) ;
+		n i,args
+	for i=1:1:$zlength($zcmdline," ") do
+	. set args(i)=$zpiece($zcmdline," ",i)
+	if $zlength($get(args(1)))&($get(args(1))=+$get(args(1))) set PORT=args(1)
 	K (PORT)
 	I '$G(PORT) S PORT=8089
 	S NOGLB=1
