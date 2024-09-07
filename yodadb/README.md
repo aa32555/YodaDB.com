@@ -5,7 +5,7 @@
 ## What is it gui + backend library ...like AA's TKEDGE ?
 Open source Intersystems replacement (single insane mans effort, i also work on templeOS...on sundays)
 
-![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/aa.gif)
+![megif](https://raw.githubusercontent.com/aa32555/fuz/main/ezgif.com-animated-gif-maker.gif)
 
 
 ## tell me more I hate cos, sin, tan like why is tan sin/cos and wtf is object oriented programming ?
