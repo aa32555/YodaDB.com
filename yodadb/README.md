@@ -39,8 +39,10 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
 ## How to Install 
   * Server:
       * 1-Script:
-```bash
-      wget -o- https://raw.githubusercontent.com/aa32555/YodaDB.com/main/install.sh | bash
+```sh
+       curl  https://raw.githubusercontent.com/aa32555/YodaDB.com/main/install.sh > install.sh
+       chmod +x install.sh
+       ./install.sh
 ```
    * or 1-manual:
 ```bash
