@@ -1,2 +1,0 @@
-
-tcp6       0      0 :::5012                 :::*                    LISTEN      4878/yottadb         off (0.00/0/0)

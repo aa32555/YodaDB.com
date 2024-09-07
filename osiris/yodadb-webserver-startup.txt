@@ -1,0 +1,2 @@
+
+tcp6       0      0 :::1987                 :::*                    LISTEN      4878/yottadb         off (0.00/0/0)
