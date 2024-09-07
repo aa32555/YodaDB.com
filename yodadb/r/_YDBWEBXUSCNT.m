@@ -1,7 +1,7 @@
-%YDBWEBXUSCNT ;Job counting for YodaDB; 05-07-2021 
+%YDBWEBXUSCNT ;Job counting for YottaDB; 05-07-2021 
 	;#################################################################
 	;#                                                               #
-	;# Copyright (c) 2021 YodaDB LLC and/or its subsidiaries.       #
+	;# Copyright (c) 2021 YottaDB LLC and/or its subsidiaries.       #
 	;# All rights reserved.                                          #
 	;#                                                               #
 	;#   This source code contains the intellectual property         #
