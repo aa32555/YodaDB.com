@@ -77,7 +77,7 @@ CREATENEWROUTINE(I,O)
 	if $zextract(routine)="%" set $zextract(routine)="_"
 	if $$FileExists^%YDBUTILS(path_"/"_routine_".m") S @response@("STATUS")="false" quit
 	if '$$DirectoryExists^%YDBUTILS(path) set @response@("STATUS")="false" quit
-	new id set id(1)=I("data","ROUTINE")
+	new id set id(1)=I("data","ROUTINE"),id(2)=I("data","ROUTINE")="S @(""$ZINTERRUPT=""""I $$JOBEXAM^%YDBWEBZU($ZPOSITION)"""""") "
 	do WriteFile^%YDBUTILS(path_"/"_routine_".m",.id)
 	set @response@("STATUS")="true" 
 	quit
