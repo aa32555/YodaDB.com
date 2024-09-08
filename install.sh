@@ -37,3 +37,7 @@
          echo "     ydb -run \"Start^%YDBWEB 5012\""
          echo "     ydb -run \"Check^%YDBWEB\" > yodadb-webserver-startup.txt\""
          echo "=================================================================================================================================="
+        echo "Made by: Ahmed Khaled Abdelrazek"
+         echo "حمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير"
+         echo "www.YodaDb.com"
+         echo "github.com/aa32555" 
