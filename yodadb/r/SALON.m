@@ -27,7 +27,7 @@ SALON
 	S ^MI(":WS","ROUTES","OPTIONS","sms-reply","REPLY^SMS")=""
 	S ^MI(":WS","ROUTES","POST","sms-reply","REPLY^SMS")=""
 	;
-	S ^MI(":WS","PORT")=5012
+	S ^MI(":WS","PORT")=5001
 	S ^MI(":WS","IP")="127.0.0.1"
 	S ^MI(":WS","NAME")="solo"
 	S ^MI(":WS","PHONE")="+2017379078"
