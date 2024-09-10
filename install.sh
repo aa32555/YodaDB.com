@@ -73,14 +73,15 @@
          mkdir -p /tmp/tmp
         wget -o- https://github.com/user-attachments/files/16651027/YDB-r2.00.tar.gz
         tar -xvf YDB-r2.00.tar.gz
-        mv YDB-r2.00 yottadb_r200
-        cd yottadb_r*
+        mv YDB-r2.00 ydb
+        cd ydb
         mkdir build
         cd build
-        cmake ..
+        export CC=/usr/bin/clang
+        cmake -D CMAKE_LINKER:PATH=/usr/bin/ld.lld ..
         make -j $(getconf _NPROCESSORS_ONLN)
         make install
-         echo "=================================================================================================================================="
+        echo "=================================================================================================================================="
          echo "YodaDB(YottaDB, let's be serious) Installer..."
          echo "Made by: Ahmed Khaled Abdelrazek"
          echo "حمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير"
