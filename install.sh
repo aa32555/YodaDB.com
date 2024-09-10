@@ -66,15 +66,15 @@
         apt-get install -y gawk
         apt-get install -y nano
         apt-get install -y htop
-        #mkdir -p /tmp/tmp && cd /tmp/tmp
-        #curl -o- https://raw.githubusercontent.com/aa32555/YDB/master/sr_unix/ydbinstall.sh | bash
-        #chmod +x ydbinstall.sh
-        #./ydbinstall.sh --utf8 default --verbose --octo --from-source https://github.com/aa32555/YDB.git --overwrite-existing  
-         mkdir -p /tmp/tmp
+        mkdir -p /tmp/tmp && cd /tmp/tmp
+        curl -o- https://raw.githubusercontent.com/aa32555/YDB/master/sr_unix/ydbinstall.sh | bash
+        chmod +x ydbinstall.sh
+        ./ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing --from-source https://github.com/aa32555/YDB.git  
+        #mkdir -p /tmp/tmp
         wget -o- https://github.com/user-attachments/files/16651027/YDB-r2.00.tar.gz
         tar -xvf YDB-r2.00.tar.gz
-        mv YDB-r2.00 ydb
-        cd ydb
+        mv YDB-* YDB
+        cd YDB
         mkdir build
         cd build
         export CC=/usr/bin/clang
