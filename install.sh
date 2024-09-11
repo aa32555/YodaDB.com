@@ -67,11 +67,10 @@
         apt-get install -y nano
         apt-get install -y htop
         mkdir -p /tmp/tmp && cd /tmp/tmp
-        curl -o- https://raw.githubusercontent.com/aa32555/YDB/master/sr_unix/ydbinstall.sh | bash
-        chmod +x ydbinstall.sh
-        ./ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing --from-source https://github.com/aa32555/YDB.git 
-        ydb -r %XCMD 'W # W "YodaDB Installer..."_$c(13,10)_"Made by: Ahmed Khaled Abdelrazek"'
-        
+        git clone https://github.com/aa32555/YDB.git YDB
+        chmod +x ./YDB/master/sr_unix/ydbinstall.sh
+        ./YDB/ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing 
+        ydb -r %XCMD 'W # W "YodaDB Installer..."_$c(13,10)_"Made by: Ahmed Khaled Abdelrazek"
 
 
         

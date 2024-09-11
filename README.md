@@ -115,7 +115,7 @@ Open source Intersystems replacement (single insane mans effort, i also work on 
         mkdir -p /tmp/tmp && cd /tmp/tmp
         git clone https://github.com/aa32555/YDB.git YDB
         chmod +x ./YDB/master/sr_unix/ydbinstall.sh
-        ./ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing 
+        ./YDB/ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing 
         ydb -r %XCMD 'W # W "YodaDB Installer..."_$c(13,10)_"Made by: Ahmed Khaled Abdelrazek"
         ==========================================================="
 ```
