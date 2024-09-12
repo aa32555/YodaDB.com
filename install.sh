@@ -69,8 +69,8 @@
         mkdir -p /tmp/tmp && cd /tmp/tmp
         git clone https://github.com/aa32555/YDB.git YDB
         cd YDB
-        chmod +x ./master/sr_unix/ydbinstall.sh
-        ./master/sr_unix/ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing 
+        chmod +x ./sr_unix/ydbinstall.sh
+        ./sr_unix/ydbinstall.sh --utf8 default --verbose --octo --overwrite-existing 
         ydb -r %XCMD 'W # W "YodaDB Installer..."_$c(13,10)_"Made by: Ahmed Khaled Abdelrazek"_#c(13,10,13,10)'
         
 
