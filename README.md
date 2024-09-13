@@ -1,11 +1,28 @@
 
 
+![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/ezgif.com-animated-gif-maker.gif)
+![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/hi.png)
+
+## Random server connection info... I'm born in 5012
+![megifabc](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/connection-details-ksa-kgb-fbi-kris-swiatek-hiral-ghandi-angel-cartel-tatto-hand.png)
+
+```sh
+#To try out yodadb.com, fill in the following in the 
+#connection details:
+#        IP: 204.13.233.29
+#        PORT: 5012
+#To tryout the salon app @ http://www.yodadb.com:7777/
+#  email : ahmedatyodadb@gmail.com
+#  password: 12345678
+#  data for both apps are on 204.13.233.29, not YodaDB.com```
+```
+
+
+
 # 👀 [http://yodadb.com](http://www.yodadb.com)
 
 ## What is it gui + backend library ...like AA's TKEDGE ?
 Open source Intersystems replacement (single insane mans effort, i also work on templeOS...on sundays)
-
-![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/ezgif.com-animated-gif-maker.gif)
 
 
 ## tell me more I hate cos, sin, tan like why is tan sin/cos and wtf is object oriented programming ?
@@ -161,6 +178,3 @@ open source, [but details coming soon]
 (see above)
 Copyright [Yoda Database](https://yodadb.com) and `ydb` contributors. All rights reserved. The [Yoda Database](https://yodadb.com) has registered trademarks and uses trademarks.  For a list of trademarks of the [Yoda Database](https://yodadb.com), please see our [Trademark Policy](http://yodadb.com/)
 
-
-## Random server connection info... I'm born in 8089 
-![megifabc](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/connection-details-ksa-kgb-fbi-kris-swiatek-hiral-ghandi-angel-cartel-tatto-hand.png)
