@@ -1,7 +1,6 @@
 
 
-![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/ezgif.com-animated-gif-maker.gif)
-![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/hi.png)
+
 
 ## Random server connection info... I'm born in 5012
 ![megifabc](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/connection-details-ksa-kgb-fbi-kris-swiatek-hiral-ghandi-angel-cartel-tatto-hand.png)
@@ -21,8 +20,17 @@
 
 # 👀 [http://yodadb.com](http://www.yodadb.com)
 
+
+
 ## What is it gui + backend library ...like AA's TKEDGE ?
 Open source Intersystems replacement (single insane mans effort, i also work on templeOS...on sundays)
+
+
+
+![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/ezgif.com-animated-gif-maker.gif)
+![megif](https://raw.githubusercontent.com/aa32555/YodaDB.com/main/osiris/hi.png)
+
+![me](https://raw.githubusercontent.com/aa32555/fuz/main/Screenshot%202024-09-15%2010.03.38%20AM.png)
 
 
 ## tell me more I hate cos, sin, tan like why is tan sin/cos and wtf is object oriented programming ?
