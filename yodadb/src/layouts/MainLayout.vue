@@ -141,7 +141,7 @@
 <pre>
     𓄿 <a href="http://www.YodaDB.com">http://www.YodaDB.com</a>
     𓄿 <a href="https://www.github.com/aa32555">https://www.github.com/aa32555</a>
-    𓄿 <a href="https://paypal.me/asolok?country.x=US&locale.x=en_US">Buy me coffee :'(</a>
+    𓄿 <a href="https://paypal.me/asolok?country.x=US&locale.x=en_US">!Buy me coffee! I'm homeless,<br> ask Sam and Bhaskar of YottaDB. Why ?  </a>
 </pre></span>
           <div></div>
         </q-card-section>
