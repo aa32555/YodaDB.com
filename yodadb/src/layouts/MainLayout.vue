@@ -139,9 +139,9 @@
           />
 
 <pre>
-  www.YodaDB.com
-  github.com/aa32555
-  𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁
+    𓄿 <a href="http://www.YodaDB.com">http://www.YodaDB.com</a>
+    𓄿 <a href="https://www.github.com/aa32555">https://www.github.com/aa32555</a>
+    𓄿 <a href="https://www.paypal.com/paypalme/MUMPSGalaxy">https://www.paypal.com/paypalme/MUMPSGalaxy</a>
 </pre></span>
           <div></div>
         </q-card-section>
